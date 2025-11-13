@@ -1,0 +1,78 @@
+mkdir out/
+mkdir -p work/notes/
+grep -Ei 'error|warn' data/logs/system.log > out/warn_err.txt
+2B
+tr -cs '[:alnum:]' '\n' < data/lorem.txt | tr '[:upper:]' '[:lower:]' | sort -nr | head -10 > out/top_words.txt
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+set -eu
+""" ustalenie trybu testowego - na sucho"""
+DRY=0
+if["${1:-}"="-n"]; then
+DRY=1
+shift
+fi
+
+
+DIR="${1:-}"
+if[ -z "$DIR" ]; then
+echo"użycie: bash scripts/report.sh [-n]<KATALOG>" >&2
+exit 2
+fi
+
+if [! -d "$DIR"];then
+echo "błąd: katalog '$DIR' nie istnieje" >&2
+exit 1
+fi
+
+date +"%F %T" #wypisuje date F i godzine T
+
+HAS_SUBDIR=0
+for d in "$DIR"/*; do
+if[-d "$d"]; then
+HAS_SUBDIR=1
+break
+fi
+done
+
+"""petla jesli brak podkatalogow, to wyswietla komunikat"""
+
+if["HAS_SUBDIR" -eq 0]; then
+if["$DRY" -eq 1]; then
+echo "DRY-RUN: brak podkatalogów w: $DIR"
+else
+echo "brak podkatalogów w: $DIR"
+fi
+exit 0
+fi
+
+"""petla sortujaca: albo human-readable, albo nie human-readable jesli h-r niedostepne i ostatnich 5"""
+
+if sort --help 2>dev>null | grep -q -- "-h"; then
+OUT="$(du -sh "$DIR"/* 2>/dev/null | sort -h | tail -5)"
+else
+OUT="$(du -s "$DIR"/* 2>/dev/null | sort -n | tail -5)"
+fi
+
+"""petla dla dry-run gdy wszystko jest ok"""
+
+if["$DRY" -eq 1];them
+echo "DRY-RUN: ponizej bylby wynik top-5"
+fi
+
+printf'%s\n' "$OUT"
+exit 0
