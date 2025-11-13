@@ -1,0 +1,154 @@
+5nowakmi@stud30-26:~$ git clone
+fatal: You must specify a repository to clone.
+
+usage: git clone [<options>] [--] <repo> [<dir>]
+
+    -v, --[no-]verbose    be more verbose
+    -q, --[no-]quiet      be more quiet
+    --[no-]progress       force progress reporting
+    --[no-]reject-shallow don't clone shallow repository
+    -n, --no-checkout     don't create a checkout
+    --checkout            opposite of --no-checkout
+    --[no-]bare           create a bare repository
+    --[no-]mirror         create a mirror repository (implies --bare)
+    -l, --[no-]local      to clone from a local repository
+    --no-hardlinks        don't use local hardlinks, always copy
+    --hardlinks           opposite of --no-hardlinks
+    -s, --[no-]shared     setup as shared repository
+    --[no-]recurse-submodules[=<pathspec>]
+                          initialize submodules in the clone
+    --[no-]recursive ...  alias of --recurse-submodules
+    -j, --[no-]jobs <n>   number of submodules cloned in parallel
+    --[no-]template <template-directory>
+                          directory from which templates will be used
+    --[no-]reference <repo>
+                          reference repository
+    --[no-]reference-if-able <repo>
+                          reference repository
+    --[no-]dissociate     use --reference only while cloning
+    -o, --[no-]origin <name>
+                          use <name> instead of 'origin' to track upstream
+    -b, --[no-]branch <branch>
+                          checkout <branch> instead of the remote's HEAD
+    -u, --[no-]upload-pack <path>
+                          path to git-upload-pack on the remote
+    --[no-]depth <depth>  create a shallow clone of that depth
+    --[no-]shallow-since <time>
+                          create a shallow clone since a specific time
+    --[no-]shallow-exclude <revision>
+                          deepen history of shallow clone, excluding rev
+    --[no-]single-branch  clone only one branch, HEAD or --branch
+    --no-tags             don't clone any tags, and make later fetches not to follow them
+    --tags                opposite of --no-tags
+    --[no-]shallow-submodules
+                          any cloned submodules will be shallow
+    --[no-]separate-git-dir <gitdir>
+                          separate git dir from working tree
+    --[no-]ref-format <format>
+                          specify the reference format to use
+    -c, --[no-]config <key=value>
+                          set config inside the new repository
+    --[no-]server-option <server-specific>
+                          option to transmit
+    -4, --ipv4            use IPv4 addresses only
+    -6, --ipv6            use IPv6 addresses only
+    --[no-]filter <args>  object filtering
+    --[no-]also-filter-submodules
+                          apply partial clone filters to submodules
+    --[no-]remote-submodules
+                          any cloned submodules will use their remote-tracking branch
+    --[no-]sparse         initialize sparse-checkout file to include only files at root
+    --[no-]bundle-uri <uri>
+                          a URI for downloading bundles before fetching from origin remote
+
+5nowakmi@stud30-26:~$ git clone kolokwium/<milenanowak>
+bash: syntax error near unexpected token `newline'
+5nowakmi@stud30-26:~$ git clone pi
+fatal: repository 'pi' does not exist
+5nowakmi@stud30-26:~$ git clone jhajduga/pi
+fatal: repository 'jhajduga/pi' does not exist
+5nowakmi@stud30-26:~$ git branch kolokwium/<milenanowak>
+bash: syntax error near unexpected token `newline'
+5nowakmi@stud30-26:~$ git clone kaczuszkaa/pi:main
+Cloning into 'main'...
+fatal: 'kaczuszkaa/pi:main' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+5nowakmi@stud30-26:~$ cd kaczuszka pi:main
+bash: cd: too many arguments
+5nowakmi@stud30-26:~$ mkdir out/
+5nowakmi@stud30-26:~$ mkdir -p  work/notes/
+5nowakmi@stud30-26:~$ git clone TASKS.md
+fatal: repository 'TASKS.md' does not exist
+5nowakmi@stud30-26:~$ git clone pi
+fatal: repository 'pi' does not exist
+5nowakmi@stud30-26:~$ grep -Ei 'error|warn' data/logs/system/log > out/warn_err.txt
+grep: data/logs/system/log: No such file or directory
+5nowakmi@stud30-26:~$ git clone https://github.com/milenanowak/pi
+Cloning into 'pi'...
+remote: Enumerating objects: 12, done.
+remote: Counting objects: 100% (12/12), done.
+remote: Compressing objects: 100% (9/9), done.
+remote: Total 12 (delta 0), reused 12 (delta 0), pack-reused 0 (from 0)
+Receiving objects: 100% (12/12), done.
+5nowakmi@stud30-26:~$ git branch kolokwium/<milenanowak>
+bash: syntax error near unexpected token `newline'
+5nowakmi@stud30-26:~$ git status
+fatal: not a git repository (or any parent up to mount point /)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+5nowakmi@stud30-26:~$ git remote -v
+fatal: not a git repository (or any parent up to mount point /)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+5nowakmi@stud30-26:~$ git checkout main
+fatal: not a git repository (or any parent up to mount point /)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+5nowakmi@stud30-26:~$ git pull origin main
+fatal: not a git repository (or any parent up to mount point /)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+5nowakmi@stud30-26:~$ git checkout -b kolokwium
+fatal: not a git repository (or any parent up to mount point /)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+5nowakmi@stud30-26:~$ git branch main
+fatal: not a git repository (or any parent up to mount point /)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+5nowakmi@stud30-26:~$ git status
+fatal: not a git repository (or any parent up to mount point /)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+5nowakmi@stud30-26:~$ git branch -M main
+fatal: not a git repository (or any parent up to mount point /)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+5nowakmi@stud30-26:~$ mkdir /out
+mkdir: cannot create directory ‘/out’: Permission denied
+5nowakmi@stud30-26:~$ ssh -add
+unknown option -- d
+usage: ssh [-46AaCfGgKkMNnqsTtVvXxYy] [-B bind_interface] [-b bind_address]
+           [-c cipher_spec] [-D [bind_address:]port] [-E log_file]
+           [-e escape_char] [-F configfile] [-I pkcs11] [-i identity_file]
+           [-J destination] [-L address] [-l login_name] [-m mac_spec]
+           [-O ctl_cmd] [-o option] [-P tag] [-p port] [-R address]
+           [-S ctl_path] [-W host:port] [-w local_tun[:remote_tun]]
+           destination [command [argument ...]]
+       ssh [-Q query_option]
+5nowakmi@stud30-26:~$ mkdir out/
+mkdir: cannot create directory ‘out/’: File exists
+5nowakmi@stud30-26:~$ mkdir -p work/notes/
+5nowakmi@stud30-26:~$ grep -Ei 'error|warn' data/logs/system.log > out/warn_err.txt
+grep: data/logs/system.log: No such file or directory
+5nowakmi@stud30-26:~$ tr -cs '[:alnum:]' '\n' < data/lorem.txt | tr '[:upper:]' '[:lower:]' | sort | uniq -c | sort -nr | head -10 > out/top_words.txt
+bash: data/lorem.txt: No such file or directory
+5nowakmi@stud30-26:~$ git branch kolokwium-mn
+fatal: not a git repository (or any parent up to mount point /)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+5nowakmi@stud30-26:~$ mkdir scripts/report.sh
+mkdir: cannot create directory ‘scripts/report.sh’: No such file or directory
+5nowakmi@stud30-26:~$ git commit -m "zad 1 dolaczam"
+fatal: not a git repository (or any parent up to mount point /)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+5nowakmi@stud30-26:~$ git remote set-url origin git@github.com:milenanowak/pi.git
+5nowakmi@stud30-26:~$ git remote set-url origin git@github.com:milenanowak/pi.git^C
+5nowakmi@stud30-26:~$ ^C
+5nowakmi@stud30-26:~$ ^C
+5nowakmi@stud30-26:~$ 
+
