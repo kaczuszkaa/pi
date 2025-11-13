@@ -1,0 +1,1 @@
+ komendy: grep; ls -lah; sort -h; mkdir ; cd; chmod ; 
