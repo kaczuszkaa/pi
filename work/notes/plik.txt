@@ -1,0 +1,6 @@
+Użyłam
+ mkdir out
+mkdir -p work/notes
+w katalogu work/notes touch plik.txt
+grep -Ei 'error|warn' data/logs/system.log > out/warn_err.txt
+
