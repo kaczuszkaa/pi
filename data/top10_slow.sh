@@ -13,7 +13,7 @@ if [ ! -f "$PLIK" ]; then
 fi 
 
 cat "$PLIK" | \
-tr -c '[:alnum:]' [\*] | \
+tr -c '[:alnum:]' [\n*] | \
 tr '[:upper:]' '[:lower:]' | \
 sort | \
 uniq -c | \
