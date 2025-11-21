@@ -1,0 +1,11 @@
+1zad: Użyłam
+ mkdir out
+mkdir -p work/notes
+w katalogu work/notes touch plik.txt
+grep -Ei 'error|warn' data/logs/system.log > out/warn_err.txt
+
+2zad:
+napisalam skrypt top10_slow.sh
+
+3zad: 
+napisalam skrypt report.sh
